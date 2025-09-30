@@ -1,10 +1,9 @@
 @use('\Kirschbaum\Commentions\Config')
 
 <div class="comm:flex comm:gap-4 comm:h-full" x-data="{ wasFocused: false }">
-    {{-- Main Comments Area --}}
     <div class="comm:flex-1 comm:space-y-2">
         @if (Config::resolveAuthenticatedUser()?->can('create', Config::getCommentModel()))
-            <form wire:submit.prevent="save" x-cloak>
+            <div wire:submit.prevent="save" x-cloak>
                 {{-- tiptap editor --}}
                 <div class="comm:relative tip-tap-container comm:mb-2" x-on:click="wasFocused = true" wire:ignore>
                     <div
@@ -29,7 +28,7 @@
                     >{{ __('commentions::comments.cancel') }}</x-filament::button>
                 </div>
             </template>
-        </form>
+        </div>
     @endif
 
         <livewire:commentions::comment-list
@@ -42,12 +41,4 @@
             :per-page-increment="$perPageIncrement ?? null"
         />
     </div>
-
-    {{-- Subscription Sidebar --}}
-    @if ($this->canSubscribe && $this->resolvedSidebarEnabled)
-        <livewire:commentions::subscription-sidebar
-            :record="$record"
-            :show-subscribers="$this->resolvedShowSubscribers"
-        />
-    @endif
 </div>
