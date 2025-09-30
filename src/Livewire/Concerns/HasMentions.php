@@ -22,11 +22,11 @@ trait HasMentions
                 return is_array($mentionable) ?
                     [
                         'id' => data_get($mentionable, 'id'),
-                        'name' => data_get($mentionable, 'name'),
+                        'name' => data_get($mentionable, 'email'),
                     ] :
                     [
                         'id' => $mentionable->getKey(),
-                        'name' => Manager::getName($mentionable),
+                        'name' => $mentionable->email,
                     ];
             });
     }
