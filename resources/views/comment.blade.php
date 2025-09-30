@@ -10,7 +10,7 @@
     @else
         <div class="comm:w-10 comm:h-10 comm:rounded-full comm:mt-0.5 "></div>
     @endif
-test
+
     <div class="comm:flex-1">
         <div class="comm:text-sm comm:font-bold comm:text-gray-900 comm:dark:text-gray-100 comm:flex comm:justify-between comm:items-center">
             <div>
