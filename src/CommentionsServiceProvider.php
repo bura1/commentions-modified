@@ -11,6 +11,7 @@ use Kirschbaum\Commentions\Comment as CommentModel;
 use Kirschbaum\Commentions\Events\UserWasMentionedEvent;
 use Kirschbaum\Commentions\Listeners\SendUserMentionedNotification;
 use Kirschbaum\Commentions\Livewire\Comment;
+use Kirschbaum\Commentions\Livewire\CommentCreate;
 use Kirschbaum\Commentions\Livewire\CommentList;
 use Kirschbaum\Commentions\Livewire\Comments;
 use Kirschbaum\Commentions\Livewire\Reactions;
@@ -47,6 +48,7 @@ class CommentionsServiceProvider extends PackageServiceProvider
         Livewire::component('commentions::comment', Comment::class);
         Livewire::component('commentions::comment-list', CommentList::class);
         Livewire::component('commentions::comments', Comments::class);
+        Livewire::component('commentions::comment-create', CommentCreate::class);
         Livewire::component('commentions::reactions', Reactions::class);
         Livewire::component('commentions::subscription-sidebar', SubscriptionSidebar::class);
 
